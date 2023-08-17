@@ -87,7 +87,7 @@ public class Course {
 				
 			}
 		}
-	
+		this.listCourses = list_aux;
 
 		return this.listCourses;
 	}

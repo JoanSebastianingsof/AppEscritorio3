@@ -26,11 +26,11 @@ public class CourseController {
 	@GetMapping(value="courses",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Course> getCourses(){
 		return course.listCourses();
-		}
+	}
 	@GetMapping(value="courses/{name}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Course> searchCourses(@PathVariable("name") String nam){
 		return course.searchCourses(nam);
-		}
+	}
 	
 	@PostMapping(value="course", consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Course>postCourse(@RequestBody Course c){
@@ -39,11 +39,11 @@ public class CourseController {
 	
 	@DeleteMapping(value="courses/{name}")
 	public List<Course> deleteCourse(@PathVariable("name") String nam){
-		return course.searchCourses(nam);
-		}
+		return course.deleteCourse(nam);
+	}
 	
 	@PutMapping(value="course/{name}",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Course> updateCourse(@PathVariable("name") String nam,@RequestBody Course c){
 		return course.updateCourse(c, nam);
-		}
+	}
 }
